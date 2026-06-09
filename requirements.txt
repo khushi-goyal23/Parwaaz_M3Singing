@@ -1,0 +1,9 @@
+numpy
+librosa
+demucs
+openai-whisper
+streamlit
+matplotlib
+scipy
+soundfile
+torchcrepe

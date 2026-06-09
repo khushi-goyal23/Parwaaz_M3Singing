@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.cache/
+cache/
+separated/
+*.mp3
+*.wav
+.git/
+.gitignore
+DEPLOYMENT_GUIDE.md
+terminals/
+assets/
