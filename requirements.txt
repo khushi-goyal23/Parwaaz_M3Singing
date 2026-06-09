@@ -7,3 +7,4 @@ matplotlib
 scipy
 soundfile
 torchcrepe
+typing_extensions>=4.12.0

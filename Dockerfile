@@ -24,12 +24,15 @@ RUN pip install --no-cache-dir \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Re-pin torch after other packages (demucs/torchcrepe can pull mismatched versions)
+# Re-pin torch without touching other deps (avoids breaking streamlit/starlette)
 RUN pip install --no-cache-dir \
     torch==${TORCH_VERSION} \
     torchaudio==${TORCH_VERSION} \
     --index-url https://download.pytorch.org/whl/cpu \
-    --force-reinstall
+    --force-reinstall --no-deps
+
+# Streamlit/starlette need TypeIs from newer typing_extensions
+RUN pip install --no-cache-dir "typing_extensions>=4.12.0"
 
 COPY . .
 
